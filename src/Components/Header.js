@@ -15,7 +15,7 @@ import FeatherIcon from 'react-native-vector-icons/Feather';
 export default function Header(props) {
   const navigation = useNavigation();
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#f3f5f9', marginTop: 30 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#f3f5f9', marginTop: 25 }}>
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.headerAction}>

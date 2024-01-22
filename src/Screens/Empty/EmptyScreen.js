@@ -17,7 +17,8 @@ export default function EmptyScreen() {
         <View style={styles.empty}>
           <FeatherIcon color="#94A3B8" name="shopping-cart" size={36} />
 
-          <Text style={styles.emptyTitle}>Doesn't have product in the your cart!</Text>
+          <Text style={styles.emptyTitle}>Doesn't have product in</Text>
+          <Text style={styles.emptyTitle}>the your cart!</Text>
           <Text style={styles.emptyDescription}>
             Start going to shopping
           </Text>

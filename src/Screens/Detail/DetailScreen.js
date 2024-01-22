@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, StatusBar, SafeAreaView, ScrollView } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { CartContext } from '../../Components/CartContent.js';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Header from '../../Components/Header.js';
@@ -23,10 +22,8 @@ const DetailScreen = () => {
         console.log('Error loading cart items:', error);
       }
     };
-
     loadCartItems();
   }, []);
-
   const handleQuantityChange = (text) => {
     // Loại bỏ các ký tự không phải số
     const cleanedText = text.replace(/[^0-99]/g, '');

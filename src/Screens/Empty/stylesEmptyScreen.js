@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
       flexShrink: 1,
       flexBasis: 0,
       paddingBottom: 140,
-      padding: 150,
+      padding: 50,
     },
     title: {
       fontSize: 32,
@@ -25,8 +25,9 @@ const styles = StyleSheet.create({
       fontSize: 21,
       fontWeight: '600',
       color: '#000',
+      alignItems:'center',
       marginBottom: 8,
-      marginTop: 16,
+      marginTop: 5,
     },
     emptyDescription: {
       fontSize: 15,

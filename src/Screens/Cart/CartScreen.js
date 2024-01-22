@@ -112,7 +112,7 @@ const CartScreen = () => {
                             keyExtractor={(item) => item.id.toString()}
                             renderItem={({ item }) => {
                                 return (
-                                    <View>
+                                    <View style={{minHeight: 700}}>
                                         <View>
                                             <View style={styles.card}>
                                                 <Image
@@ -151,37 +151,36 @@ const CartScreen = () => {
                                                 </TouchableOpacity>
                                             </View>
                                         </View>
-                                    </View>
+                                        
+                                            <View style={styles.overlay}>
+                                                <View style={styles.overlayContent}>
+                                                    <View style={styles.overlayContentTop}>
+                                                        <Text style={styles.overlayContentPrice}>Total Price: ${totalPrice}</Text>
+                                                    </View>
+                                                </View>
+                                                <TouchableOpacity
+                                                    onPress={() => {
+                                                        // handle onPress
+                                                    }}>
+                                                    <View style={styles.btn}>
+                                                        <Text style={styles.btnText}>Buy</Text>
 
+                                                        <MaterialCommunityIcons
+                                                            color="#fff"
+                                                            name="play-circle"
+                                                            size={24}
+                                                            style={{ marginLeft: 12 }} />
+                                                    </View>
+                                                </TouchableOpacity>
+                                            </View>
+                                        </View>
                                 )
                             }}
                         />
                     ) : (<EmptyScreen />)}
                 </ScrollView>
             </SafeAreaView >
-            <View style={styles.overlayContainer} >
-                <View style={styles.overlay}>
-                    <View style={styles.overlayContent}>
-                        <View style={styles.overlayContentTop}>
-                            <Text style={styles.overlayContentPrice}>Total Price: ${totalPrice}</Text>
-                        </View>
-                    </View>
-                    <TouchableOpacity
-                        onPress={() => {
-                            // handle onPress
-                        }}>
-                        <View style={styles.btn}>
-                            <Text style={styles.btnText}>Buy</Text>
 
-                            <MaterialCommunityIcons
-                                color="#fff"
-                                name="play-circle"
-                                size={24}
-                                style={{ marginLeft: 12 }} />
-                        </View>
-                    </TouchableOpacity>
-                </View>
-            </View>
         </View>
     );
 };
@@ -275,7 +274,7 @@ const styles = StyleSheet.create({
     },
     btn1: {
         flexDirection: 'row',
-        marginTop:65,
+        marginTop: 65,
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 8,
@@ -320,12 +319,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         paddingHorizontal: 8,
     },
-    overlayContainer: {
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        right: 0,
-    },
     overlay: {
         position: 'absolute',
         bottom: 0,
@@ -338,7 +331,7 @@ const styles = StyleSheet.create({
         paddingTop: 12,
         paddingHorizontal: 16,
         paddingBottom: 10,
-        shadowColor: '#000',
+        shadowColor: '#fff',
         shadowOffset: {
             width: 0,
             height: 1,
@@ -346,6 +339,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.22,
         shadowRadius: 2.22,
         elevation: 3,
+        borderRadius:12,
     },
     overlayContent: {
         flexDirection: 'column',
